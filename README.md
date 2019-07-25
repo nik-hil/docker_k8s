@@ -14,7 +14,9 @@ Execute pods_port.yml & pods_svc.yaml
 
 # Deployment
 https://kubernetes.io/docs/tutorials/stateless-application/expose-external-ip-address/
-run kubernetes_dep.yml & 
+
+Deploy pods_loadbalancer.yml
+
 ```
 kubectl expose deployment hello-world --type=LoadBalancer --name=my-service
 ```
