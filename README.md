@@ -9,10 +9,16 @@ https://cloud.docker.com/u/nikhil101/repository/docker/nikhil101/django-k8s
 1. pods-replication
 
 # Service
-service created. Service not accessible.
-Execute pods_port.yml & pods_svc.yaml
 
-# Deployment
+## Via NodePort
+https://kubernetes.io/docs/tasks/access-application-cluster/service-access-application-cluster/
+Deploy pods_nodeport.yml
+```
+kubectl expose deployment hello-world --type=NodePort --name=example-service
+```
+In GKE, Services & Incress (page) -> Port -> Port forwarding
+
+## Via Loadbalancer
 https://kubernetes.io/docs/tutorials/stateless-application/expose-external-ip-address/
 
 Deploy pods_loadbalancer.yml
