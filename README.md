@@ -23,7 +23,27 @@ https://kubernetes.io/docs/tutorials/stateless-application/expose-external-ip-ad
 
 Deploy pods_loadbalancer.yml
 
+Command line to expose deployment
 ```
 kubectl expose deployment hello-world --type=LoadBalancer --name=my-service
 ```
+Or use file, pods_loadbalancer_svc.yml
+
+# BLUE GREEN Deployment
+
+Deploy blue.yml & blue_svc.yml. Connect the service,
+```
+kubectl describe svc bg-service
+```
+
+Deploy green.yml. Check the pod list
+```
+kubectl get pods -o wide
+```
+Connect the service. It is pointing towards blue.
+
+Deploy green_svc.yml. Connect the service. It is pointing towards green.
+
+
+
 

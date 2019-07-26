@@ -6,5 +6,5 @@ from rest_framework.response import Response
 
 @api_view(['GET'])
 def home(request):
-    return Response("{value: home hit}")
+    return Response("GREEN ")
 
