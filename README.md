@@ -44,6 +44,33 @@ Connect the service. It is pointing towards blue.
 
 Deploy green_svc.yml. Connect the service. It is pointing towards green.
 
+# Ingress Conroller (nginx)
+
+```
+kubectl apply -f pods_node.yml
+
+kubectl expose deployment hello-world --type=NodePort --name=node-svc
+
+kubectl apply -f pods_nodeport_ingress.yml
+```
+
+This will create a ingress controller but we cannot access it.
+
+Create an ingress loadbalancer, https://kubernetes.github.io/ingress-nginx/deploy/#prerequisite-generic-deployment-command
+
+```
+# For GCP
+kubectl create clusterrolebinding cluster-admin-binding \
+  --clusterrole cluster-admin \
+  --user $(gcloud config get-value account)
+
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/mandatory.yaml
+
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/cloud-generic.yaml
+
+```
+Visit load balancer IP address.
+
 
 
 
