@@ -26,7 +26,7 @@ kubectl create -f pods_replica.yml
 
 ## Via containerPort
 
-See, [containerPort](./web01/k8s/container_port/README.MD)
+See, [containerPort](./web01/k8s/container_port/README.MD) & [Kubernetes site](https://kubernetes.io/docs/tasks/access-application-cluster/service-access-application-cluster/#creating-a-service-for-an-application-running-in-two-pods)
 
 ## Via NodePort
 https://kubernetes.io/docs/tasks/access-application-cluster/service-access-application-cluster/
