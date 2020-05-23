@@ -8,6 +8,20 @@ https://cloud.docker.com/u/nikhil101/repository/docker/nikhil101/django-k8s
 1. pods-creation
 1. pods-replication
 
+# Replicaset
+
+You create a pod and create replicaset
+```
+kubectl create -f pods.yml
+kubectl create -f pods_replica_run_with_pods.yml
+```
+
+Or you can create a replicaset which will create desired no of pods.
+```
+kubectl create -f pods_replica.yml
+```
+
+
 # Service
 
 ## Via NodePort
