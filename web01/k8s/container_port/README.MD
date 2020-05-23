@@ -29,7 +29,7 @@ But we can do port forwarding.
 
  - On chosen node, create a firewall rule that allows TCP traffic on your node port
  - at least in GKE, `kubectl port-forward $(kubectl get pod --selector="app=web" --output jsonpath='{.items[0].metadata.name}') 8080:8000`
-
+   - then click on web preview on port 8080
 
 e.g,
 ```
@@ -40,3 +40,5 @@ Handling connection for 8080
 Handling connection for 8080
 Handling connection for 8080
 ```
+
+![web preview on 8080](./8080.png)
