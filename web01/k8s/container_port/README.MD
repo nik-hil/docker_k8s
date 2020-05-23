@@ -2,7 +2,8 @@
 
 Create a service with deployment.
 ```
-kubectl apply -f pods_containerport*
+kubectl apply -f pods_containerport_deployment.yml
+kubectl apply -f pods_containerport_svc.yml
 ```
 
 Get service and endpoint details 
