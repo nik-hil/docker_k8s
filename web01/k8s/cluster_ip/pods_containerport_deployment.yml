@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: django-k8s-deployment
+spec:
+  selector:
+    matchLabels:
+      app: web
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - name: django-k8s
+        image: nikhil101/django-k8s:2.0
+        imagePullPolicy: Always
+        command: ["python3", "manage.py", "runserver"]
+        ports:
+        - containerPort: 8000
