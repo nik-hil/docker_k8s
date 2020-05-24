@@ -37,15 +37,11 @@ kubectl expose deployment hello-world --type=NodePort --name=example-service
 In GKE, Services & Incress (page) -> Port -> Port forwarding
 
 ## Via Loadbalancer
+
+See [this](https://github.com/nik-hil/docker_k8s/blob/master/web01/k8s/loadbalancer/README.MD)
+
 https://kubernetes.io/docs/tutorials/stateless-application/expose-external-ip-address/
 
-Deploy pods_loadbalancer.yml
-
-Command line to expose deployment
-```
-kubectl expose deployment hello-world --type=LoadBalancer --name=my-service
-```
-Or use file, pods_loadbalancer_svc.yml
 
 # BLUE GREEN Deployment
 
