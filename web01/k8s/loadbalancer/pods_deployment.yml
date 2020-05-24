@@ -1,6 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  labels:
+    app: web
   name: django-k8s-deployment
 spec:
   selector:
@@ -17,5 +19,5 @@ spec:
         image: nikhil101/django-k8s:2.0
         imagePullPolicy: Always
         command: ["python3", "manage.py", "runserver"]
-        ports:
-        - containerPort: 8000
+        #ports:
+        #- containerPort: 8000

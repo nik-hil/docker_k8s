@@ -20,19 +20,10 @@ kubectl describe services
 kubectl get ep django-k8s-svc
 ```
 
-```
-$ kubectl get ep django-k8s-svc
-NAME                  ENDPOINTS                      AGE
-coontainer-port-svc   10.4.1.6:8000,10.4.2.11:8000   48m
-```
 
-if we try to connect this socket it will not connect.
-```
-$ curl 10.4.1.6:8000
-curl: (7) Failed to connect to 10.4.1.6 port 8000: Connection refused
-```
-
-With Nodeport, we access the pod with NODEIP:NODE_PORT.
+With Nodeport, we access the pod with NODEIP:NODE_PORT. `curl http://node_ip:node_port` should return success. Check if you have to add firewall rule to allow nodeport.
+You can get name of node by `kubectl get pods -o wide` and use it to get the ip address.
+``
 Cluster IP is set automatically.
 
 we are running this from machine which has different IP other than cluster. If we run this command from inside of cluster it will be successful.
