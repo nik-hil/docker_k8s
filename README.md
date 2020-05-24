@@ -45,6 +45,8 @@ https://kubernetes.io/docs/tutorials/stateless-application/expose-external-ip-ad
 
 # BLUE GREEN Deployment
 
+[Go to folder](https://github.com/nik-hil/docker_k8s/tree/master/web01/k8s/blue_green_deployment)
+
 Deploy blue.yml & blue_svc.yml. Connect the service,
 ```
 kubectl describe svc bg-service
