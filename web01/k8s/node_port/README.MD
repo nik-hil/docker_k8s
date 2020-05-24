@@ -53,4 +53,4 @@ Handling connection for 8080
 Handling connection for 8080
 ```
 
-![web preview on 8080](../container_port/8080.png)
+![web preview on 8080](../cluster_ip/8080.png)
