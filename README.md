@@ -74,18 +74,11 @@ This will create a ingress controller but we cannot access it.
 
 Create an ingress loadbalancer, https://kubernetes.github.io/ingress-nginx/deploy/#prerequisite-generic-deployment-command
 
-```
+
 # For GCP
-kubectl create clusterrolebinding cluster-admin-binding \
-  --clusterrole cluster-admin \
-  --user $(gcloud config get-value account)
+Internet is full with example which works perfectly on minikube. But having ingress on minikube is not same as on cloud. Public IP doesnot exist on minikube. Which is big missing part.
 
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/mandatory.yaml
-
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/cloud-generic.yaml
-
-```
-Visit load balancer IP address.
+Easiest working example with public IP, is at https://cloud.google.com/kubernetes-engine/docs/tutorials/configuring-domain-name-static-ip#config-connector_1
 
 
 
